@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Pet from './Pet';
+import useSetBread from './useSetBread';
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
-const breads = []
+
 
 const SearchParams = () => {
     const [location, setLocation] = useState('')
     const [animal, setAnimal] = useState('')
     const [bread, setBread] = useState('')
     const [pets, setPets] = useState([])
+    const [breads] = useSetBread(animal)
 
 
     useEffect(() => {
